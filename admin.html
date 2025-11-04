@@ -5,14 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin | DLmath Lab</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    // --- 간단한 관리자 로그인 로직 ---
+    function checkLogin() {
+      const password = document.getElementById("password").value;
+      if (password === "dlmath2025!") { // 🔐 여기에 임시 비밀번호 설정
+        document.getElementById("login-section").style.display = "none";
+        document.getElementById("admin-panel").style.display = "block";
+      } else {
+        alert("❌ Incorrect password. Please try again.");
+      }
+    }
+  </script>
 </head>
 <body>
   <header>
-    <h1>Admin Panel</h1>
+    <h1>Admin Panel · DLmath Lab</h1>
   </header>
 
-  <section>
-    <p>This page will allow administrators to edit lab members, publications, and news.</p>
+  <!-- 로그인 화면 -->
+  <section id="login-section" style="text-align:center; margin-top:50px;">
+    <p>Enter admin password to access editing tools.</p>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkLogin()">Login</button>
+  </section>
+
+  <!-- 관리자 전용 패널 -->
+  <section id="admin-panel" style="display:none; padding:2em;">
+    <h2>🔧 Edit Lab Information</h2>
+    <p>You can edit members, publications, and news manually here.</p>
+
+    <ul>
+      <li><a href="members.html" target="_blank">Edit Members Page</a></li>
+      <li><a href="publications.html" target="_blank">Edit Publications Page</a></li>
+      <li><a href="index.html" target="_blank">Edit News Section</a></li>
+    </ul>
   </section>
 
   <footer>
