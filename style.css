@@ -131,7 +131,7 @@ ul {
    ========================================= */
 .hero-section {
     /* 배경 이미지 경로를 실제 파일로 변경하세요 */
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("kor.jpg");
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("jpg/Gallery/kor.jpg");
     background-size: cover;
     background-position: center;
     height: 80vh;
@@ -453,4 +453,5 @@ footer {
         width: 100%;
         max-width: 400px;
     }
+
 }
