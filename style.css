@@ -1,0 +1,456 @@
+/* =========================================
+   1. 기본 설정 (Variables & Reset)
+   ========================================= */
+:root {
+    --ku-crimson: #8C002B;       /* 고려대 공식 크림슨 색상 */
+    --ku-crimson-light: #B22245; /* 밝은 크림슨 (호버용) */
+    --text-dark: #333333;        /* 본문 검은색 */
+    --text-gray: #666666;        /* 보조 회색 */
+    --bg-light: #F8F9FA;         /* 연한 회색 배경 */
+    --white: #FFFFFF;
+    --shadow: 0 4px 6px rgba(0,0,0,0.05); /* 부드러운 그림자 */
+}
+
+* {
+    box-sizing: border-box; /* 레이아웃 깨짐 방지 */
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* =========================================
+   2. 헤더 & 네비게이션 (Header)
+   ========================================= */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky; /* 스크롤 시 상단 고정 */
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: var(--ku-crimson);
+    font-size: 1.5rem;
+}
+
+.logo-img {
+    height: 120px; /* 로고 크기 */
+    margin-right: 30px;
+}
+
+.nav-menu a {
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 1rem;
+    padding-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.nav-menu a:hover {
+    color: var(--ku-crimson);
+}
+
+/* 현재 페이지 활성화 표시 (Active State) */
+.nav-menu a.active {
+    color: var(--ku-crimson);
+    font-weight: 700;
+    border-bottom: 2px solid var(--ku-crimson);
+}
+
+/* =========================================
+   3. 공통 레이아웃 (Common Layout)
+   ========================================= */
+.section-container {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sub-page-content {
+    min-height: 80vh; /* 푸터가 바닥에 붙도록 최소 높이 설정 */
+    padding-top: 20px;
+}
+
+.bg-light { background-color: var(--bg-light); }
+.bg-dark { background-color: #222; color: #fff; }
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--ku-crimson);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* 타이틀 하단 장식 선 */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--ku-crimson);
+}
+
+/* =========================================
+   4. 홈 화면 (Home / Hero)
+   ========================================= */
+.hero-section {
+    /* 배경 이미지 경로를 실제 파일로 변경하세요 */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("kor.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-sub {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* =========================================
+   5. People 페이지 (Members)
+   ========================================= */
+.member-group {
+    margin-bottom: 50px;
+}
+
+.group-title {
+    font-size: 1.5rem;
+    color: var(--ku-crimson);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.group-divider {
+    margin: 50px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+/* 멤버 카드 스타일 (사진 + 텍스트) */
+.member-card {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    background: var(--white);
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--ku-crimson); /* 왼쪽 포인트 컬러 */
+    box-shadow: var(--shadow);
+    gap: 30px; /* 사진과 글 사이 간격 */
+    transition: transform 0.2s;
+}
+
+.member-card:hover {
+    transform: translateY(-3px); /* 호버 시 살짝 위로 뜸 */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* 사진 영역 (원형) */
+.member-photo {
+    flex-shrink: 0;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #f0f0f0;
+    background-color: #eee;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 텍스트 영역 */
+.member-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+}
+
+.member-info .role {
+    color: var(--ku-crimson);
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.member-info p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: var(--text-gray);
+}
+
+/* =========================================
+   6. Professor 페이지 (상세 소개)
+   ========================================= */
+.prof-grid {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.prof-img-box img {
+    width: 350px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.prof-info h3 {
+    font-size: 2.2rem;
+    color: var(--ku-crimson);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.prof-role {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+.prof-details h4 {
+    border-left: 4px solid var(--ku-crimson);
+    padding-left: 12px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.prof-details ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.prof-details li {
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   7. Publications 페이지 (논문 목록)
+   ========================================= */
+.pub-list li {
+    margin-bottom: 15px;
+}
+
+.pub-list a {
+    display: block;
+    background: var(--white);
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.pub-list a:hover {
+    border-color: var(--ku-crimson);
+    background-color: #fff9fa; /* 아주 연한 붉은 배경 */
+    transform: translateX(5px);
+}
+
+.pub-list .year {
+    font-weight: bold;
+    color: var(--ku-crimson);
+    margin-right: 10px;
+}
+
+.pub-list .title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    display: block;
+    margin: 5px 0;
+}
+
+.pub-list .journal {
+    font-style: italic;
+    color: var(--text-gray);
+}
+
+/* =========================================
+   8. Projects 페이지
+   ========================================= */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 반응형 그리드 */
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--ku-crimson);
+}
+
+.project-card h4 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    color: var(--text-dark);
+}
+
+/* =========================================
+   9. Photos 페이지 (갤러리)
+   ========================================= */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.photo-item {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.photo-item img:hover {
+    transform: scale(1.1); /* 확대 효과 */
+}
+
+/* =========================================
+   10. Contact 페이지
+   ========================================= */
+.contact-layout {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* 화면 작으면 줄바꿈 */
+}
+
+.map-box {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    background-color: #222; /* 다크 테마 */
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info strong {
+    color: #fff;
+}
+
+/* =========================================
+   11. 푸터 (Footer)
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #1a1a1a;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: auto; /* 내용이 적어도 항상 바닥에 */
+}
+
+/* =========================================
+   12. 모바일 반응형 (Mobile Responsive)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 네비게이션 간소화 */
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .nav-menu a {
+        margin: 5px;
+        font-size: 0.9rem;
+    }
+
+    /* 히어로 텍스트 크기 조절 */
+    .hero-content h1 { font-size: 2.2rem; }
+    
+    /* 멤버 카드 세로 정렬 */
+    .member-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .member-info { width: 100%; }
+
+    /* 교수님 프로필 세로 정렬 */
+    .prof-grid {
+        flex-direction: column;
+    }
+    
+    .prof-img-box img {
+        width: 100%;
+        max-width: 400px;
+    }
+}
