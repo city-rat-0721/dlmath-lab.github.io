@@ -455,75 +455,72 @@ footer {
     }
 
 }
-
 /* =========================================
-   For Students Page (Button Style)
+   For Students 페이지 디자인 (수정됨: 꽉 찬 버튼 스타일)
    ========================================= */
 
-/* 강의 자료 섹션 (기존 유지) */
+/* 강의 자료 섹션 박스 */
 .material-section {
     text-align: center;
-    background-color: #f9f9f9;
-    padding: 40px;
-    border-radius: 10px;
+    background-color: #fff;
+    padding: 50px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     border: 1px solid #eee;
-    margin-bottom: 50px;
 }
 
-.main-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background-color: var(--ku-crimson);
-    color: white;
-    font-weight: bold;
-    border-radius: 50px;
-    box-shadow: 0 4px 6px rgba(140, 0, 43, 0.3);
-    transition: all 0.3s;
-}
-
-.main-btn:hover {
-    background-color: var(--ku-crimson-light);
-    transform: translateY(-2px);
-    color: white;
-}
-
-/* --- 유튜브 버튼 그리드 --- */
-.button-grid {
-    display: grid;
-    /* 화면 크기에 따라 2열 혹은 1열로 자동 조정 */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto; /* 중앙 정렬 */
-}
-
-/* 유튜브 버튼 디자인 */
-.youtube-btn {
-    display: flex;
+/* 공통 버튼 스타일 (메인 버튼 & 유튜브 버튼) */
+.main-btn, .youtube-btn {
+    display: inline-flex; /* flex로 변경하여 내부 아이콘 정렬 용이 */
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    background-color: white;
-    border: 2px solid var(--ku-crimson); /* 테두리 강조 */
-    border-radius: 12px; /* 모서리 둥글게 */
-    color: var(--ku-crimson);
-    font-size: 1.2rem;
+    background-color: var(--ku-crimson); /* 배경을 크림슨색으로 채움 */
+    color: white; /* 글씨는 흰색 */
+    border: none; /* 테두리 없음 */
+    border-radius: 12px; /* 둥근 모서리 */
     font-weight: 700;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(140, 0, 43, 0.2); /* 부드러운 그림자 */
     transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* 밑줄 제거 */
 }
 
+/* 마우스 올렸을 때 공통 효과 */
+.main-btn:hover, .youtube-btn:hover {
+    background-color: #B22245; /* 약간 밝은 크림슨색으로 변경 */
+    color: white;
+    transform: translateY(-3px); /* 살짝 위로 떠오름 */
+    box-shadow: 0 8px 15px rgba(140, 0, 43, 0.3); /* 그림자 강조 */
+}
+
+/* --- 상단 구글 사이트 버튼 전용 스타일 --- */
+.main-btn {
+    margin-top: 25px;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 50px; /* 더 둥글게 */
+}
+
+/* --- 유튜브 버튼 그리드 레이아웃 --- */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 너비 자동 조정 */
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* --- 유튜브 버튼 전용 스타일 --- */
+.youtube-btn {
+    padding: 25px;
+    font-size: 1.25rem;
+    height: 100%; /* 높이 통일 */
+}
+
+/* 버튼 내 아이콘 스타일 */
 .youtube-btn .icon {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-right: 15px;
 }
 
-/* 마우스 올렸을 때 효과 */
-.youtube-btn:hover {
-    background-color: var(--ku-crimson); /* 배경색 채우기 */
-    color: white; /* 글자색 흰색으로 */
-    transform: translateY(-3px); /* 살짝 위로 */
-    box-shadow: 0 6px 12px rgba(140, 0, 43, 0.3);
-}
