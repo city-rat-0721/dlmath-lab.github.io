@@ -455,3 +455,103 @@ footer {
     }
 
 }
+
+/* =========================================
+   For Students Page Styles
+   ========================================= */
+
+/* 강의 자료 섹션 (상단) */
+.material-section {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.material-section h3 {
+    margin-top: 0;
+    color: var(--text-dark);
+}
+
+.main-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: var(--ku-crimson);
+    color: white;
+    font-weight: bold;
+    border-radius: 50px; /* 둥근 버튼 */
+    box-shadow: 0 4px 6px rgba(140, 0, 43, 0.3);
+    transition: all 0.3s;
+}
+
+.main-btn:hover {
+    background-color: var(--ku-crimson-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(140, 0, 43, 0.4);
+    color: white; /* 호버 시 글자색 유지 */
+}
+
+/* 강의 카드 그리드 레이아웃 */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* 강의 카드 디자인 */
+.course-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 30px 20px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: var(--shadow);
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.course-card:hover {
+    border-color: var(--ku-crimson);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.course-card h4 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.course-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* 높이 맞춤용 */
+}
+
+.watch-link {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--ku-crimson);
+    border: 1px solid var(--ku-crimson);
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.course-card:hover .watch-link {
+    background-color: var(--ku-crimson);
+    color: white;
+}
+
