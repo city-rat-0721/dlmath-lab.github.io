@@ -457,21 +457,17 @@ footer {
 }
 
 /* =========================================
-   For Students Page Styles
+   For Students Page (Button Style)
    ========================================= */
 
-/* 강의 자료 섹션 (상단) */
+/* 강의 자료 섹션 (기존 유지) */
 .material-section {
     text-align: center;
     background-color: #f9f9f9;
     padding: 40px;
     border-radius: 10px;
     border: 1px solid #eee;
-}
-
-.material-section h3 {
-    margin-top: 0;
-    color: var(--text-dark);
+    margin-bottom: 50px;
 }
 
 .main-btn {
@@ -481,7 +477,7 @@ footer {
     background-color: var(--ku-crimson);
     color: white;
     font-weight: bold;
-    border-radius: 50px; /* 둥근 버튼 */
+    border-radius: 50px;
     box-shadow: 0 4px 6px rgba(140, 0, 43, 0.3);
     transition: all 0.3s;
 }
@@ -489,69 +485,45 @@ footer {
 .main-btn:hover {
     background-color: var(--ku-crimson-light);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(140, 0, 43, 0.4);
-    color: white; /* 호버 시 글자색 유지 */
-}
-
-/* 강의 카드 그리드 레이아웃 */
-.resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-/* 강의 카드 디자인 */
-.course-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: white;
-    padding: 30px 20px;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    transition: 0.3s;
-    box-shadow: var(--shadow);
-    text-decoration: none; /* 밑줄 제거 */
-}
-
-.course-card:hover {
-    border-color: var(--ku-crimson);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.card-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.course-card h4 {
-    margin: 10px 0;
-    font-size: 1.2rem;
-    color: var(--text-dark);
-    font-weight: 700;
-}
-
-.course-card p {
-    color: var(--text-gray);
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-    flex-grow: 1; /* 높이 맞춤용 */
-}
-
-.watch-link {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: var(--ku-crimson);
-    border: 1px solid var(--ku-crimson);
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: 0.3s;
-}
-
-.course-card:hover .watch-link {
-    background-color: var(--ku-crimson);
     color: white;
 }
 
+/* --- 유튜브 버튼 그리드 --- */
+.button-grid {
+    display: grid;
+    /* 화면 크기에 따라 2열 혹은 1열로 자동 조정 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+/* 유튜브 버튼 디자인 */
+.youtube-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid var(--ku-crimson); /* 테두리 강조 */
+    border-radius: 12px; /* 모서리 둥글게 */
+    color: var(--ku-crimson);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.youtube-btn .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+/* 마우스 올렸을 때 효과 */
+.youtube-btn:hover {
+    background-color: var(--ku-crimson); /* 배경색 채우기 */
+    color: white; /* 글자색 흰색으로 */
+    transform: translateY(-3px); /* 살짝 위로 */
+    box-shadow: 0 6px 12px rgba(140, 0, 43, 0.3);
+}
